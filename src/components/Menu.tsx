@@ -1,3 +1,4 @@
+import Link from "next/link";
 const menuItems = [
   {
     title: "MENU",
@@ -112,3 +113,29 @@ const menuItems = [
     ],
   },
 ];
+
+
+export default function Menu(){
+  return (
+
+    <div className="flex flex-col gap-4">
+        { menuItems.map( (menu) => (
+          <div key={menu.title}>
+            <h1 className="text-gray-600 my-2">{menu.title}</h1>
+              { menu.items.map( (item) => (
+                    <Link href={item.href}>
+                      <div className="flex items-center gap2">
+                        <div className="w-full">
+                            <img src={item.icon} alt={item.label} />
+                        </div>
+                        <div className="w-full hidden md:inline-block">
+                          {item.label}
+                        </div>
+                      </div>
+                  </Link>
+              ))}
+          </div>
+        ))}
+    </div>
+  )
+} 
