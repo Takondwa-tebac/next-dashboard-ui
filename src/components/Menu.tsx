@@ -118,17 +118,17 @@ const menuItems = [
 export default function Menu(){
   return (
 
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col">
         { menuItems.map( (menu) => (
           <div key={menu.title}>
-            <h1 className="text-gray-600 my-2">{menu.title}</h1>
+            <h1 className="text-gray-600 my-8 mx-2">{menu.title}</h1>
               { menu.items.map( (item) => (
                     <Link href={item.href}>
-                      <div className="flex items-center gap2">
+                      <div className="flex   gap-0 mx-2 my-2">
                         <div className="w-full">
-                            <img src={item.icon} alt={item.label} />
+                            <img src={item.icon} alt={item.label}  className="w-5 h-5"/>
                         </div>
-                        <div className="w-full hidden md:inline-block">
+                        <div className="hidden md:inline">
                           {item.label}
                         </div>
                       </div>
