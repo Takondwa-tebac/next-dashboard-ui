@@ -121,16 +121,16 @@ export default function Menu(){
     <div className="flex flex-col">
         { menuItems.map( (menu) => (
           <div key={menu.title}>
-            <h1 className="text-gray-600 my-8 mx-2">{menu.title}</h1>
+            <h1 className="text-gray-600 hidden md:block my-8 mx-2">{menu.title}</h1>
               { menu.items.map( (item) => (
                     <Link href={item.href}>
-                      <div className="flex   gap-0 mx-2 my-2">
-                        <div className="w-full">
+                      <div className="flex justify-center items-center lg:justify-start gap-2 mx-2 my-4">
+                        {/* <div className="w-full"> */}
                             <img src={item.icon} alt={item.label}  className="w-5 h-5"/>
-                        </div>
-                        <div className="hidden md:inline">
+                        {/* </div> */}
+                        <span className="hidden md:inline">
                           {item.label}
-                        </div>
+                        </span>
                       </div>
                   </Link>
               ))}
