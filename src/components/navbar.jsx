@@ -26,8 +26,8 @@ const Navbar = () => {
                         </label>
                 </div>
 
-                <div className="flex-row flex justify-end items-center gap-2">
-                    <Link href="#">
+                <div className="flex-row flex justify-end items-center gap-6">
+                    <Link href="#" className="w-7 h-7">
                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor" 
                          className="icon icon-tabler icons-tabler-filled icon-tabler-message">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -35,7 +35,7 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <Link href="#" className="relative">
+                    <Link href="#" className="relative flex items-center justify-center cursor-pointer w-7 h-7">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none" 
                      stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  
                      stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-bell">
@@ -44,7 +44,7 @@ const Navbar = () => {
                         <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                         </svg>
 
-                        <div className="absolute top-0 right-2 bg-puprle-600 h-6 w-6 rounded-full">
+                        <div className="absolute -top-3 w-5 h-5 flex  items-center justify-center -right-3 bg-purple-600 h-6 w-6 rounded-full">
                             <span className="tex-sm text-white">1</span>
                         </div>
                     </Link>
@@ -53,6 +53,8 @@ const Navbar = () => {
                     <h1 className="text-sm font-semibold">Takondwa Kapyola</h1>
                     <span className="text-xs text-grsy-600">admin</span>
                     </Link>
+
+                    <img src="/avatar.png" alt="avatar" className="rounded-full" width={36} height={36} />
                 </div>
 
         </div>
