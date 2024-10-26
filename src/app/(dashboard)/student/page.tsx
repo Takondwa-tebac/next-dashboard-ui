@@ -1,8 +1,14 @@
 const StudentPage = () => {
     return (
-        <div className="text-gray-600 my5">
-            <span>Admin Page</span>
-        </div>
+        <div className="p-5 felx flex-col md:fle-row">
+        {/* left */}
+         <div className="2/3">
+         
+         </div>
+          {/* right */}
+         <div className="1/3">
+         </div>
+      </div>
     )
 }
 
