@@ -17,12 +17,12 @@ const AdminPage = () => {
 
                 {/* charts   */}
 
-                <div className="flex flex-col md:flex-row justify-between">
-                    <div className="w-full md:w-1/2">
+                <div className="my-4 flex flex-col md:flex-row justify-between">
+                    <div className="w-full md:w-2/5 h-[450px]">
                         <CountChart />
                     </div>
 
-                    <div className="w-full w-1/2">
+                    <div className="w-full w-3/5 h-[450px]">
                         <span> other stats </span>
                     </div>
 
@@ -34,7 +34,7 @@ const AdminPage = () => {
             <div className="1/3">
             </div>
 
-            
+
         </div>
     )
 }
