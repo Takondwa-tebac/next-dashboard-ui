@@ -1,6 +1,8 @@
 import StatCard from '@/components/stats-card';
 import CountChart from '@/components/countchart';
 import AttendanceChart from '@/components/attendanceChart';
+import FinanceChart from '@/components/financechart';
+
 
 
 
@@ -28,6 +30,10 @@ const AdminPage = () => {
                         <AttendanceChart />
                     </div>
 
+                </div>
+
+                <div className="w-full">
+                    <FinanceChart />
                 </div>
             </div>
 
