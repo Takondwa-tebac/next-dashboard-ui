@@ -49,7 +49,7 @@ export default function EventCalendar(){
             </div>
             {
                 events.map((event,index)=> (
-                    <div className="shadow-sm bg-white px-4 even:border-t-[#C3EBFA] border-2 rounded-lg odd:border-t-purple-200" key={index}>
+                    <div className="shadow-sm bg-white px-4 even:border-t-[#C3EBFA] border-t-4 border-gray-100 rounded-lg odd:border-t-purple-200" key={index}>
                         <div className="flex justify-between items-center my-2">
                             <h1 className="font-bold tex-lg">{event.title}</h1>
                             <span className="text-xs text-gray-600 capitalize">{event.time}</span>
