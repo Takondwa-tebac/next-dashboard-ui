@@ -19,9 +19,9 @@ const Navbar = () => {
                                     fill="currentColor"
                                     className="h-4 w-4 opacity-70">
                                     <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                                    clip-rule="evenodd" />
+                                    clipRule="evenodd" />
                                 </svg>
                         </label>
                 </div>
@@ -37,8 +37,8 @@ const Navbar = () => {
 
                     <Link href="#" className="relative flex items-center justify-center cursor-pointer w-7 h-7">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none" 
-                     stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  
-                     stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-bell">
+                     stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  
+                     strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-bell">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                         <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
