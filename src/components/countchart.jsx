@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 import Link from 'next/link';
@@ -15,66 +15,49 @@ const data = [
       fill: '#FAE27C',
     },
     {
-        name: 'Total',
-        count: 106,
-        fill: 'white',
-      },
-  ];
+      name: 'Total',
+      count: 106,
+      fill: 'white',
+    },
+];
 
-
-const style = {
-    top: '50%',
-    right: 0,
-    transform: 'translate(0, -50%)',
-    lineHeight: '24px',
-  };
-
-export default function CountChart(){
-    return(
-        <div className="flex flex-col p-2 items-center bg-white shadow-sm gap-3">
+export default function CountChart() {
+    return (
+        <div className="flex flex-col p-2 items-center bg-white shadow-sm gap-3 w-full h-full">
             {/* title */}
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center w-full">
                 <h1 className="text-md font-semibold">Students</h1>
                 <Link href="#">
-                   <img src="/moreDark.png" alt="more info" className="w-3 h-2" />
+                    <img src="/moreDark.png" alt="more info" className="w-3 h-2" />
                 </Link>
             </div>
 
-
             {/* chart */}
-            <div className="relative w-full h-[75%]">
-                <ResponsiveContainer >
+            <div className="relative w-full h-[200px]">
+                <ResponsiveContainer width="100%" height="100%">
                     <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="100%" barSize={32} data={data}>
-                    <RadialBar
-                        background
-                        dataKey="count"
-                    />
-                    {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle"  /> */}
+                        <RadialBar background dataKey="count" />
                     </RadialBarChart>
                 </ResponsiveContainer>
-
-                <div className="absolute" top-0 right-0 inset-0>
+                <div className="absolute inset-0 flex justify-center items-center">
                     <img src="/maleFemale.png" alt="boy and girl" className="w-8 h-8" />
                 </div>
             </div>
 
-            {/* bottom   */}
-            <div className="flex justify-between gap-16">
-                <div className="flex flex-col gap-1">
-                    <div className="w-5 h-5 bg-green-200 rounded-full"></div>
-                    <h1 className="fotn-bold">234</h1>
+            {/* bottom */}
+            <div className="flex justify-between gap-16 w-full">
+                <div className="flex flex-col items-center gap-1">
+                    <div className="w-5 h-5" style={{ backgroundColor: '#C3EBFA' }}></div>
+                    <h1 className="font-bold">234</h1>
                     <div className="text-xs text-gray-300">Boys (35%)</div>
                 </div>
 
-                <div className="flex flex-col gap-1">
-                    <div className="w-5 h-5 bg-yellow-200 rounded-full"></div>
+                <div className="flex flex-col items-center gap-1">
+                    <div className="w-5 h-5" style={{ backgroundColor: '#FAE27C' }}></div>
                     <h1 className="font-bold">1,234</h1>
                     <div className="text-xs text-gray-300">Girls (65%)</div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
-
-
-
