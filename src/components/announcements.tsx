@@ -31,7 +31,7 @@ export default function Announcements(){
     return (
         <div className="flex flex-col gap-8">
         <div className="flex justify-between">
-            <h1 className="text-lg text-gray-600">Events</h1>
+            <h1 className="text-lg text-gray-600">Announcements </h1>
             <Link href="#" className="text-gray-600 ">View all</Link>
         </div>
 
