@@ -46,6 +46,19 @@ export default function AttendanceChart() {
             </Link>
         </div>
 
+          {/* top */}
+          <div className="flex my-2 flex-row gap-2 w-full">
+            <div className="flex items-center gap-1">
+                <div className="w-5 h-5 rounded-full" style={{ backgroundColor: '#C3EBFA' }}></div>
+                <h1 className="font-bold">Present</h1>
+            </div>
+
+            <div className="flex items-center gap-1">
+                <div className="w-5 h-5 rounded-full" style={{ backgroundColor: '#FAE27C' }}></div>
+                <h1 className="font-bold">Absent</h1>
+            </div>
+        </div>
+
         {/* chart */}
         <div className="relative w-full h-[200px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -69,23 +82,9 @@ export default function AttendanceChart() {
                     <Bar dataKey="absent" fill="#FAE27C" activeBar={<Rectangle fill="gold" stroke="purple" />} />
                 </BarChart>
             </ResponsiveContainer>
-           
         </div>
 
-        {/* bottom */}
-        <div className="flex justify-between gap-2 w-full">
-            <div className="flex flex-col items-center gap-1">
-                <div className="w-5 h-5" style={{ backgroundColor: '#C3EBFA' }}></div>
-                <h1 className="font-bold">234</h1>
-                <div className="text-xs text-gray-300">Boys (35%)</div>
-            </div>
-
-            <div className="flex flex-col items-center gap-1">
-                <div className="w-5 h-5" style={{ backgroundColor: '#FAE27C' }}></div>
-                <h1 className="font-bold">1,234</h1>
-                <div className="text-xs text-gray-300">Girls (65%)</div>
-            </div>
-        </div>
+      
     </div>
     )
 }

@@ -1,5 +1,7 @@
 import StatCard from '@/components/stats-card';
 import CountChart from '@/components/countchart';
+import AttendanceChart from '@/components/attendanceChart';
+
 
 
 const AdminPage = () => {
@@ -23,7 +25,7 @@ const AdminPage = () => {
                     </div>
 
                     <div className="w-full w-3/5 h-[350px]">
-                        <span> other stats </span>
+                        <AttendanceChart />
                     </div>
 
                 </div>
