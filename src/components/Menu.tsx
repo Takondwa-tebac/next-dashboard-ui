@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { role } from "@/lib/data";
 const menuItems = [
   {
     title: "MENU",
@@ -122,18 +123,22 @@ export default function Menu(){
         { menuItems.map( (menu) => (
           <div key={menu.title}>
             <h1 className="text-gray-600 hidden md:block my-8 mx-2">{menu.title}</h1>
-              { menu.items.map( (item) => (
+              { menu.items.map( (item) => {
+                if(item.visible.includes(role)){
+                  return (
                     <Link href={item.href}>
-                      <div className="flex justify-center items-center lg:justify-start gap-2 mx-2 my-4">
-                        {/* <div className="w-full"> */}
-                            <img src={item.icon} alt={item.label}  className="w-5 h-5"/>
-                        {/* </div> */}
-                        <span className="hidden md:inline">
-                          {item.label}
-                        </span>
-                      </div>
-                  </Link>
-              ))}
+                    <div className="flex justify-center items-center lg:justify-start gap-2 mx-2 my-4">
+                      {/* <div className="w-full"> */}
+                          <img src={item.icon} alt={item.label}  className="w-5 h-5"/>
+                      {/* </div> */}
+                      <span className="hidden md:inline">
+                        {item.label}
+                      </span>
+                    </div>
+                </Link>
+                  )
+                }
+              })}
           </div>
         ))}
     </div>
