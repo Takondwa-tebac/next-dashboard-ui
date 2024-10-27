@@ -127,7 +127,7 @@ export default function Menu(){
                 if(item.visible.includes(role)){
                   return (
                     <Link href={item.href}>
-                    <div className="flex justify-center items-center lg:justify-start gap-2 mx-2 my-4">
+                    <div className="flex justify-center hover:bg-green-200  rounded-md  md:px-2  w-full py-2 items-center lg:justify-start gap-2 mx-2 my-4">
                       {/* <div className="w-full"> */}
                           <img src={item.icon} alt={item.label}  className="w-5 h-5"/>
                       {/* </div> */}
