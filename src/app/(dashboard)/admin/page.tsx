@@ -6,7 +6,7 @@ const AdminPage = () => {
     return (
         <div className="p-5 flex flex-col md:flex-row">
             {/* left */}
-            <div className="2/3">
+            <div className="4/5">
                     {/* cards */}
                 <div className="flex gap-4 flex-wrap">
                     <StatCard  type={{user:"Students",count:6123}}/>
@@ -18,11 +18,11 @@ const AdminPage = () => {
                 {/* charts   */}
 
                 <div className="my-4 flex flex-col md:flex-row justify-between">
-                    <div className="w-full md:w-2/5 h-[450px]">
+                    <div className="w-full md:w-2/5 h-[350px]">
                         <CountChart />
                     </div>
 
-                    <div className="w-full w-3/5 h-[450px]">
+                    <div className="w-full w-3/5 h-[350px]">
                         <span> other stats </span>
                     </div>
 
@@ -31,7 +31,7 @@ const AdminPage = () => {
 
 
             {/* right */}
-            <div className="1/3">
+            <div className="1/5">
             </div>
 
 

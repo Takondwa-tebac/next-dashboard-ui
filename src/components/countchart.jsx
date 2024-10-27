@@ -45,7 +45,7 @@ export default function CountChart() {
             </div>
 
             {/* bottom */}
-            <div className="flex justify-between gap-16 w-full">
+            <div className="flex justify-between gap-2 w-full">
                 <div className="flex flex-col items-center gap-1">
                     <div className="w-5 h-5" style={{ backgroundColor: '#C3EBFA' }}></div>
                     <h1 className="font-bold">234</h1>
