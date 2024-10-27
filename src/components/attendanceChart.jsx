@@ -37,7 +37,7 @@ const data = [
 
 export default function AttendanceChart() {
     return (
-        <div className="flex flex-col p-2 items-center bg-white shadow-sm gap-3 w-full h-full">
+    <div className="flex flex-col p-2 items-center bg-white shadow-sm gap-3 w-full h-full">
         {/* title */}
         <div className="flex justify-between items-center w-full">
             <h1 className="text-md font-semibold">Attendance</h1>
@@ -47,15 +47,15 @@ export default function AttendanceChart() {
         </div>
 
           {/* top */}
-          <div className="flex my-2 flex-row gap-2 w-full">
+          <div className="flex my-4 flex-row gap-2 w-full">
             <div className="flex items-center gap-1">
                 <div className="w-5 h-5 rounded-full" style={{ backgroundColor: '#C3EBFA' }}></div>
-                <h1 className="font-bold">Present</h1>
+                <h1 className="text-sm text-gray-600">Present</h1>
             </div>
 
             <div className="flex items-center gap-1">
                 <div className="w-5 h-5 rounded-full" style={{ backgroundColor: '#FAE27C' }}></div>
-                <h1 className="font-bold">Absent</h1>
+                <h1 className="text-sm text-gray-600">Absent</h1>
             </div>
         </div>
 
@@ -77,9 +77,9 @@ export default function AttendanceChart() {
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Legend />
-                    <Bar dataKey="present" fill="#C3EBFA" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                    <Bar dataKey="absent" fill="#FAE27C" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+                    {/* <Legend /> */}
+                    <Bar dataKey="present" fill="#C3EBFA"  radius={"10,10"} activeBar={<Rectangle fill="#C3EBFA"  />} />
+                    <Bar dataKey="absent" fill="#FAE27C" radius={'10,10'} activeBar={<Rectangle fill="#FAE27C"   />} />
                 </BarChart>
             </ResponsiveContainer>
         </div>
