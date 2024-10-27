@@ -1,7 +1,7 @@
 import Link from "next/link"
 export default function StatCard({type}){
     return (
-        <div className="rounded-2xl even:bg-purple-300 w-full md:w-44 p-4 odd:bg-yellow-100">
+        <div className="rounded-2xl even:bg-purple-300 flex-1  p-4 odd:bg-yellow-100">
                 <div className="flex gap-3  justify-between items-center">
                     <span className="rounded-lg bg-white p-1 text-xs">{new Date().getFullYear() }</span>
                     <Link href={"#"}>

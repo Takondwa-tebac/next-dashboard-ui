@@ -9,9 +9,9 @@ import EventCalendar from '@/components/eventcalendar';
 
 const AdminPage = () => {
     return (
-        <div className="p-5 flex flex-col md:flex-row">
+        <div className="p-5 flex flex-col gap-8 md:flex-row">
             {/* left */}
-            <div className="4/5">
+            <div className="w-full md:w-3/5">
                     {/* cards */}
                 <div className="flex gap-4 flex-wrap">
                     <StatCard  type={{user:"Students",count:6123}}/>
@@ -40,7 +40,7 @@ const AdminPage = () => {
 
 
             {/* right */}
-            <div className="1/5">
+            <div className="flex flex-col gap-8 w-full md:w-2/5 ">
              <div className="">
                 <EventCalendar />
              </div>
