@@ -4,45 +4,81 @@ import Link from 'next/link';
 
 const data = [
     {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
+      name: 'Jan',
+      income: 140000,
+      expense: 60000,
+      amt: 2210
     },
     {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
+      name: 'Feb',
+      income: 140000,
+      expense: 60000,
       amt: 2210,
     },
     {
-      name: 'Page C',
-      uv: 2000,
-      pv: 9800,
+      name: 'Mar',
+      income: 140000,
+      expense: 60000,
       amt: 2290,
     },
     {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
+      name: 'Apr',
+      income: 140000,
+      expense: 60000,
       amt: 2000,
     },
     {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
+      name: 'May',
+      income: 140000,
+      expense: 60000,
       amt: 2181,
     },
     {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
+      name: 'Jun',
+      income: 140000,
+      expense: 60000,
       amt: 2500,
     },
     {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
+      name: 'Jul',
+      income: 140000,
+      expense: 60000,
+      amt: 2100,
+    },
+    {
+        name: 'Jul',
+        income: 140000,
+        expense: 60000,
+        amt: 2100,
+      },
+      {
+        name: 'Aug',
+        income: 140000,
+        expense: 60000,
+        amt: 2100,
+      },
+      {
+        name: 'Sept',
+        income: 140000,
+        expense: 60000,
+        amt: 2100,
+      },
+      {
+        name: 'Oct',
+        income: 140000,
+        expense: 60000,
+        amt: 2100,
+      },
+      {
+        name: 'Nov',
+        income: 140000,
+        expense: 60000,
+        amt: 2100,
+      },
+      {
+      name: 'Dec',
+      income: 140000,
+      expense: 60000,
       amt: 2100,
     },
   ];
@@ -73,7 +109,7 @@ export default  function FinanceChart(){
 
         {/* chart */}
         <div className="relative w-full h-[200px]">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="90%">
                         <LineChart
                         width={500}
                         height={300}
@@ -90,8 +126,8 @@ export default  function FinanceChart(){
                                 <YAxis />
                                 <Tooltip />
                                 <Legend />
-                                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                                <Line type="monotone" dataKey="income" stroke="#C3EBFA" activeDot={{ r: 8 }} />
+                                <Line type="monotone" dataKey="expense" stroke="#FAE27C" />
                         </LineChart>
             </ResponsiveContainer>
         </div>

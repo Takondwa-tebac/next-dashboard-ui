@@ -2,6 +2,7 @@ import StatCard from '@/components/stats-card';
 import CountChart from '@/components/countchart';
 import AttendanceChart from '@/components/attendanceChart';
 import FinanceChart from '@/components/financechart';
+import EventCalendar from '@/components/eventcalendar';
 
 
 
@@ -40,6 +41,9 @@ const AdminPage = () => {
 
             {/* right */}
             <div className="1/5">
+             <div className="">
+                <EventCalendar />
+             </div>
             </div>
 
 
