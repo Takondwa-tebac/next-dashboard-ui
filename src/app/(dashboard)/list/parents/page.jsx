@@ -20,8 +20,8 @@ export default function Parents(){
 
       const columns = [
       
-        { name: 'Name', selector: row => row.studentId, sortable: true },
-        { name: 'Email', selector: row => row.grade,sortable: true },
+        { name: 'Name', selector: row => row.name, sortable: true },
+        { name: 'Email', selector: row => row.email,sortable: true },
         { name: 'Students', selector: row => row.students.join(","), sortable: true },
         { name: 'Phone', selector: row => row.phone, sortable: true },
         { name: 'Adress', selector: row => row.address, sortable: true },
