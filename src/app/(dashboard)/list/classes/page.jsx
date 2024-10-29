@@ -45,7 +45,7 @@ export default function Classes(){
         <>       
       
         <div className="my-2 flex flex-row justify-between">
-            <span>All Students</span>
+            <span>All Classes</span>
 
             <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
                <span className="font-bold text-lg text-center">+</span>
