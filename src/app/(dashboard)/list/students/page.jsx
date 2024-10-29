@@ -4,6 +4,7 @@ import { studentsData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Students(){
 
@@ -58,6 +59,9 @@ export default function Students(){
 
     return (
         <>       
+        <Head>
+            <title>Students</title>
+        </Head>
       
         <div className="my-2 flex flex-row justify-between">
             <span>All Students</span>

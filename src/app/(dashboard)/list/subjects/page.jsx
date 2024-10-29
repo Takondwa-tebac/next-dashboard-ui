@@ -1,9 +1,10 @@
 "use client"
 
-import { subjectData } from "@/lib/data";
+import { subjectsData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Subjects(){
 
@@ -19,9 +20,8 @@ export default function Subjects(){
       const handleDelete =() => {};
 
       const columns = [
-
-        { name: 'Name', selector: row => row.grade,sortable: true },
-        { name: 'Class', selector: row => row.class, sortable: true },
+        { name: 'ID', selector: row => row.id, sortable: true },
+        { name: 'Name', selector: row => row.name,sortable: true },
         { name: 'Teachers', selector: row => row.teachers.join(","), sortable: true },
         {
           name: "Actions",
@@ -42,6 +42,9 @@ export default function Subjects(){
     return (
         <>       
       
+      <Head>
+        <title>Subjects</title>
+      </Head>
         <div className="my-2 flex flex-row justify-between">
             <span>All Subjects</span>
 
