@@ -27,7 +27,7 @@ export default function Events(){
         { name: 'Class', selector: row => row.class,sortable: true },
         { name: 'Date', selector: row => row.date,sortable: true },
         { name: 'Starts At', selector: row => row.startTime,sortable: true },
-        { name: 'Ends At', selector: row => row.ednTime,sortable: true },
+        { name: 'Ends At', selector: row => row.endTime,sortable: true },
         {
           name: "Actions",
           cell: row => (
@@ -53,7 +53,6 @@ export default function Events(){
       
         <div className="my-4 flex flex-row justify-between">
             <span className="text-lg text-gray-600">Scheduled Events</span>
-
             <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
                <span className="font-bold text-lg text-center">+</span>
             </Link>
