@@ -33,7 +33,6 @@ const events : event[]= [
 
 ]
 
-
 export default function EventCalendar(){
     const [value, onChange] = useState<Value>(new Date());
     return (
