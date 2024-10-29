@@ -9,43 +9,30 @@ export default function Classes(){
 
     const [filterText, setFilterText] = useState('');  
 
+
       const filteredData = classesData.filter(
         item =>
-          item.name.toLowerCase().includes(filterText.toLowerCase()) ||
+          item.name.toLowerCase().includes(filterText.toLowerCase()) 
       );
 
       const handleEdit =() => {};
       const handleDelete =() => {};
 
       const columns = [
-        {
-            name: "Info",
-            cell: row => (
-                <>
-                <div className="flex flex-row items-center gap-2">
-                    <img src={row.photo} alt={row.name} className="h-8 w-8 rounded-full contain" />
-                    <div className="flex flex-col flex-no-wrap gap-2">
-                        <h1 className="text-gray-600 text-xs font-semibold">{row.name}</h1>
-                        <span className="text-xs text-gray-400">{row.email}</span>
-                    </div>
-                </div>
-                </>
-            )
-        },
-        { name: 'Id', selector: row => row.studentId, sortable: true },
-        { name: 'Grade', selector: row => row.grade,sortable: true },
-        { name: 'Class', selector: row => row.class, sortable: true },
-        { name: 'Phone', selector: row => row.phone, sortable: true },
-        { name: 'Adress', selector: row => row.address, sortable: true },
+
+        { name: 'Name', selector: row => row.name,sortable: true },
+        { name: 'Capacity', selector: row => row.capacity, sortable: true },
+        { name: 'Grade', selector: row => row.grade, sortable: true },
+        { name: 'Supervisor', selector: row => row.supervisor, sortable: true },
         {
           name: "Actions",
           cell: row => (
               <>
-              <button onClick={() => handleEdit(row.Member)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
+              <button onClick={() => handleEdit(row.id)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
                   Edit               
               </button>
 
-              <button onClick={() => handleDelete(row.Member)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
+              <button onClick={() => handleDelete(row.id)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
                  Delete
              </button>
               </>

@@ -12,8 +12,8 @@ export default function Teachers(){
       const filteredData = teachersData.filter(
         item =>
           item.name.toLowerCase().includes(filterText.toLowerCase()) ||
-          item.classes.join(",").includes(filterText.toLowerCase()) ||
-          item.subjects.join(",").includes(filterText.toLowerCase())
+          item.class.includes(filterText.toLowerCase()) 
+        //   item.subjects.includes(filterText.toLowerCase())
       );
 
       const handleEdit =() => {};

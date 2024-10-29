@@ -43,11 +43,11 @@ export default function Students(){
           name: "Actions",
           cell: row => (
               <>
-              <button onClick={() => handleEdit(row.Member)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
+              <button onClick={() => handleEdit(row.id)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
                   Edit               
               </button>
 
-              <button onClick={() => handleDelete(row.Member)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
+              <button onClick={() => handleDelete(row.id)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
                  Delete
              </button>
               </>
@@ -74,7 +74,6 @@ export default function Students(){
                 columns={columns}
                 data={filteredData}
                 pagination
-                // selectableRows
                 persistTableHead
                 subHeader
                 subHeaderComponent={
