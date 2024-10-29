@@ -17,7 +17,9 @@ export default function Teachers(){
           item.subjects.join(",").includes(filterText.toLowerCase())
       );
 
-      const handleEdit =() => {};
+      const handleEdit =(id) => {
+        window.location.assign(`/list/teachers/${id}`)
+      };
       const handleDelete =() => {};
 
       const columns = [
@@ -42,10 +44,10 @@ export default function Teachers(){
           name: "Actions",
           cell: row => (
               <>
-              <button onClick={() => handleEdit(row.Member)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
+              <button onClick={() => handleEdit(row.teacherId)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
                   Edit               
               </button>
-              <button onClick={() => handleDelete(row.Member)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
+              <button onClick={() => handleDelete(row.teacherId)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
                  Delete
              </button>
               </>
