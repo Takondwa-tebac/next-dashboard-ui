@@ -1,21 +1,20 @@
 "use client"
 
-import { resultsData } from "@/lib/data";
+import { eventsData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
-export default function Results(){
+export default function Events(){
 
     const [filterText, setFilterText] = useState('');  
 
 
-      const filteredData = resultsData.filter(
+      const filteredData = eventsData.filter(
         item =>
-          item.subject.toLowerCase().includes(filterText.toLowerCase()) ||
-          item.teacher.toLowerCase().includes(filterText.toLowerCase()) ||
-          item.student.toLowerCase().includes(filterText.toLowerCase()) ||
+          item.title.toLowerCase().includes(filterText.toLowerCase()) ||
+          item.date.toLowerCase().includes(filterText) ||
           item.class.toLowerCase().includes(filterText.toLowerCase()) 
       );
 
@@ -23,15 +22,12 @@ export default function Results(){
       const handleDelete =() => {};
 
       const columns = [
-        //  todo: add time as well i.e from 8:00 -9:30 am e.t.c
-        { name: 'Subject', selector: row => row.subject,sortable: true },
+
+        { name: 'Title', selector: row => row.title,sortable: true },
         { name: 'Class', selector: row => row.class,sortable: true },
-        { name: 'Teacher', selector: row => row.teacher,sortable: true },
-        { name: 'Student', selector: row => row.student,sortable: true },
-        { name: 'Results From', selector: row => row.type,sortable: true },
-        { name: 'Score', selector: row => row.score,sortable: true },
-        
         { name: 'Date', selector: row => row.date,sortable: true },
+        { name: 'Starts At', selector: row => row.startTime,sortable: true },
+        { name: 'Ends At', selector: row => row.ednTime,sortable: true },
         {
           name: "Actions",
           cell: row => (
@@ -52,11 +48,11 @@ export default function Results(){
     return (
         <>       
         <Head>
-            <title>Results</title>
+            <title>Events</title>
         </Head>
       
         <div className="my-4 flex flex-row justify-between">
-            <span className="text-lg text-gray-600">Exam / Assignment Results</span>
+            <span className="text-lg text-gray-600">Scheduled Events</span>
 
             <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
                <span className="font-bold text-lg text-center">+</span>
