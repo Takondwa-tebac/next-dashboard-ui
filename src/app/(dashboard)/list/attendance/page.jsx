@@ -6,7 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
-export default function Events(){
+export default function Attendance(){
 
     const [filterText, setFilterText] = useState('');  
 
@@ -22,7 +22,7 @@ export default function Events(){
       const handleDelete =() => {};
 
       const columns = [
-
+// seed real data 
         { name: 'Title', selector: row => row.title,sortable: true },
         { name: 'Class', selector: row => row.class,sortable: true },
         { name: 'Date', selector: row => row.date,sortable: true },
@@ -48,12 +48,11 @@ export default function Events(){
     return (
         <>       
         <Head>
-            <title>Events</title>
+            <title>Attendance</title>
         </Head>
       
         <div className="my-4 flex flex-row justify-between">
-            <span className="text-lg text-gray-600">Scheduled Events</span>
-
+            <span className="text-lg text-gray-600">Student Attendance</span>
             <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
                <span className="font-bold text-lg text-center">+</span>
             </Link>
