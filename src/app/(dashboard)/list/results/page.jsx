@@ -1,22 +1,22 @@
 "use client"
 
-import { examsData } from "@/lib/data";
+import { resultsData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
-export default function Exams(){
+export default function Results(){
 
     const [filterText, setFilterText] = useState('');  
 
 
-      const filteredData = examsData.filter(
+      const filteredData = resultsData.filter(
         item =>
           item.subject.toLowerCase().includes(filterText.toLowerCase()) ||
           item.teacher.toLowerCase().includes(filterText.toLowerCase()) ||
+          item.student.toLowerCase().includes(filterText.toLowerCase()) ||
           item.class.toLowerCase().includes(filterText.toLowerCase()) 
-
       );
 
       const handleEdit =() => {};
@@ -27,6 +27,10 @@ export default function Exams(){
         { name: 'Subject', selector: row => row.subject,sortable: true },
         { name: 'Class', selector: row => row.class,sortable: true },
         { name: 'Teacher', selector: row => row.teacher,sortable: true },
+        { name: 'Student', selector: row => row.student,sortable: true },
+        { name: 'Results From', selector: row => row.type,sortable: true },
+        { name: 'Score', selector: row => row.score,sortable: true },
+        
         { name: 'Date', selector: row => row.date,sortable: true },
         {
           name: "Actions",
@@ -48,11 +52,11 @@ export default function Exams(){
     return (
         <>       
         <Head>
-            <title>Exams Schedules</title>
+            <title>Results</title>
         </Head>
       
         <div className="my-4 flex flex-row justify-between">
-            <span className="text-lg text-gray-600">Teachers and their assigned subject per class</span>
+            <span className="text-lg text-gray-600">Exam / Assignment Results</span>
 
             <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
                <span className="font-bold text-lg text-center">+</span>
