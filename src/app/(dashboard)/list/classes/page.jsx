@@ -1,28 +1,40 @@
 "use client"
 
-import { parentsData } from "@/lib/data";
+import { classesData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Parents(){
+export default function Classes(){
 
     const [filterText, setFilterText] = useState('');  
 
-      const filteredData = parentsData.filter(
+      const filteredData = classesData.filter(
         item =>
           item.name.toLowerCase().includes(filterText.toLowerCase()) ||
-          item.students.join(',').includes(filterText.toLowerCase()) 
       );
 
       const handleEdit =() => {};
       const handleDelete =() => {};
 
       const columns = [
-      
-        { name: 'Name', selector: row => row.studentId, sortable: true },
-        { name: 'Email', selector: row => row.grade,sortable: true },
-        { name: 'Students', selector: row => row.students.join(","), sortable: true },
+        {
+            name: "Info",
+            cell: row => (
+                <>
+                <div className="flex flex-row items-center gap-2">
+                    <img src={row.photo} alt={row.name} className="h-8 w-8 rounded-full contain" />
+                    <div className="flex flex-col flex-no-wrap gap-2">
+                        <h1 className="text-gray-600 text-xs font-semibold">{row.name}</h1>
+                        <span className="text-xs text-gray-400">{row.email}</span>
+                    </div>
+                </div>
+                </>
+            )
+        },
+        { name: 'Id', selector: row => row.studentId, sortable: true },
+        { name: 'Grade', selector: row => row.grade,sortable: true },
+        { name: 'Class', selector: row => row.class, sortable: true },
         { name: 'Phone', selector: row => row.phone, sortable: true },
         { name: 'Adress', selector: row => row.address, sortable: true },
         {

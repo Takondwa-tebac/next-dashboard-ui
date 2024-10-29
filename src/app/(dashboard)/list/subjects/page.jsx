@@ -1,30 +1,28 @@
 "use client"
 
-import { parentsData } from "@/lib/data";
+import { subjectData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Parents(){
+export default function Subjects(){
 
     const [filterText, setFilterText] = useState('');  
 
-      const filteredData = parentsData.filter(
+      const filteredData = subjectsData.filter(
         item =>
           item.name.toLowerCase().includes(filterText.toLowerCase()) ||
-          item.students.join(',').includes(filterText.toLowerCase()) 
+          item.teachers.join(",").includes(filterText.toLowerCase()) 
       );
 
       const handleEdit =() => {};
       const handleDelete =() => {};
 
       const columns = [
-      
-        { name: 'Name', selector: row => row.studentId, sortable: true },
-        { name: 'Email', selector: row => row.grade,sortable: true },
-        { name: 'Students', selector: row => row.students.join(","), sortable: true },
-        { name: 'Phone', selector: row => row.phone, sortable: true },
-        { name: 'Adress', selector: row => row.address, sortable: true },
+
+        { name: 'Name', selector: row => row.grade,sortable: true },
+        { name: 'Class', selector: row => row.class, sortable: true },
+        { name: 'Teachers', selector: row => row.teachers.join(","), sortable: true },
         {
           name: "Actions",
           cell: row => (

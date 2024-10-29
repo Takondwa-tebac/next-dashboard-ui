@@ -1,6 +1,6 @@
 "use client"
 
-import { teachersData } from "@/lib/data";
+import { studentsData } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
 import Link from "next/link";
@@ -9,7 +9,7 @@ export default function Students(){
 
     const [filterText, setFilterText] = useState('');  
 
-      const filteredData = teachersData.filter(
+      const filteredData = studentsData.filter(
         item =>
           item.name.toLowerCase().includes(filterText.toLowerCase()) ||
           item.class.includes(filterText.toLowerCase()) ||
