@@ -33,7 +33,7 @@ export default function Performance() {
                     <h1 className="text-3xl font-bold">9.2</h1>
                     <p className="text-xs tex-gray-300">of 10 max LTS</p>
                 </div>
-                <div className="absolute bottom-16 left-0 right-0 m-auto tex-center">1st semester - 2nd semester </div>
+                <div className="absolute bottom-16 left-0 right-0 m-auto text-center">1st semester - 2nd semester </div>
             </div>
         </div>
     );
