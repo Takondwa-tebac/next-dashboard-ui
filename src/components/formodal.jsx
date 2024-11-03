@@ -1,6 +1,9 @@
 "use client";
 
+
+
 import { useState } from "react";
+import TeacherForm from '@/components/forms/teacherform';
 
 export default function FormModal({ table, type, id, data }) {
   const size = type === "create" ? "w-10 h-10" : "w-12 p-1";
@@ -34,7 +37,7 @@ export default function FormModal({ table, type, id, data }) {
             {/* </div> */}
 
             <div className="my-4">
-                <form action="#" method="Post">
+                <form action="#" method="Post" className="hidden">
                     <div className="form-control">
                         <label htmlFor="name">Name</label>
                         <input type="text" name="name"  className="input" placeholder="Enter Name" />
@@ -47,6 +50,7 @@ export default function FormModal({ table, type, id, data }) {
                     </div>
 
                 </form>
+                <TeacherForm />
             </div>
           </div>
         </div>
