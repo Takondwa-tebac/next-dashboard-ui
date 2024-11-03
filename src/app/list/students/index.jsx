@@ -1,24 +1,35 @@
 "use client"
 
-import { teachersData } from "@/lib/data";
+import { studentsData,role } from "@/lib/data";
 import DataTable from "react-data-table-component";
 import { useState } from "react";
-import Link from "next/link";
+import FormModal from "@/components/formodal";
+
 
 export default function Teachers(){
 
     const [filterText, setFilterText] = useState('');  
 
-      const filteredData = teachersData.filter(
+      const filteredData = studentsData.filter(
         item =>
           item.name.toLowerCase().includes(filterText.toLowerCase()) ||
           item.classes.join(",").includes(filterText.toLowerCase()) ||
           item.subjects.join(",").includes(filterText.toLowerCase())
       );
 
-      const handleEdit =() => {};
-      const handleDelete =() => {};
-
+    
+      const controls = role == admin ? 
+        {
+            name: "Actions",
+            cell: row => (
+                <>
+               <FormModal table="students" type="edit" id={row.studentId } />
+               <FormModal table="students" type="delete" id={row.studentId } />
+                </>
+              ), 
+          }
+          : {}
+      
       const columns = [
         {
             name: "Info",
@@ -32,24 +43,12 @@ export default function Teachers(){
                 </div>
             )
         },
-        { name: 'Id', selector: row => row.teacherId, sortable: true },
+        { name: 'Id', selector: row => row.studentId, sortable: true },
         { name: 'Subjects', selector: row => row.subjects.join(","), sortable: true },
         { name: 'Classes', selector: row => row.classes.join(","), sortable: true },
         { name: 'Phone', selector: row => row.phone, sortable: true },
         { name: 'Adress', selector: row => row.address, sortable: true },
-        {
-          name: "Actions",
-          cell: row => (
-              <>
-              <button onClick={() => handleEdit(row.Member)} className=" py-1 px-1 text-xs text-white  bg-purple-500">
-                  Edit               
-              </button>
-              <button onClick={() => handleDelete(row.Member)} className=" py-1 px-1 text-xs text-white  bg-yellow-500">
-                 Delete
-             </button>
-              </>
-            ), 
-        }
+        controls
       ];
 
 
@@ -59,9 +58,17 @@ export default function Teachers(){
         <div className="my-2 flex flex-row justify-between">
             <span>All Students</span>
 
-            <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
+            {
+                role === "admin" &&(
+                    <>
+                    <FormModal type="Create" table="Students" />
+                    </>
+                )
+            }
+
+            {/* <Link href={"#"} className="bg-gray-600 shadow-sm flex items-center rounded-sm justify-center hover:bg-gray-500 cursor-pointer mx-2 text-white w-8">
                <span className="font-bold text-lg text-center">+</span>
-            </Link>
+            </Link> */}
         </div>
        
 
