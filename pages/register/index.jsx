@@ -1,20 +1,25 @@
-import {useState} from 'react';
+"use client"
+import {use, useState} from 'react';
 import Link from "next/link";
 import Head from 'next/head';
 import {authGuard} from '@/lib/middleware';
 import withSession from '@/lib/session';
 import axios from "axios";
+import { headers } from 'next/headers';
+
 
 export const getServerSideProps = withSession(authGuard);
 
 
-export default function Login() {
+export default function Register() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const [isAuthenticating, setIsAuthenticating] = useState(false);
     const [generalError, setGeneralError] = useState(null);
     const [isRedirecting, setIsRedirecting] = useState(false);
+
+     const { authHeader} = useContext(AppContext);
 
     const handleLogin = async () => {
         setIsAuthenticating(true);
@@ -49,7 +54,7 @@ export default function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50
             bg-gradient-to-bl
-         to-blue-100 via-white via-30% from-white  border-t-4 border-t-blue-900">
+         to-green-300 via-white via-30% from-white  border-t-4 ">
             <Head>
                 <title>Login</title>
             </Head>
@@ -58,7 +63,7 @@ export default function Login() {
                     <Link href="/" className="flex flex-col justify-center items-center">
                         <img src="/images/logo.png" className="size-16" alt=""/>
                         <header className="text-primary font-bold text-4xl pl-4 lg:pl-0 my-10 lg:text-center">
-                            Money Pot
+                           SMIS
                         </header>
                     </Link>
                     <div className="px-4 py-4 my-4">
@@ -106,13 +111,10 @@ export default function Login() {
                             </div>
 
                             <div className="form-control flex flex-row items-center gap-2">
-                                <Link href="/register"
+                                <Link href="/login"
                                       className="text-sm text-primary border-r-1 border-gray-400 pr-2 hover:underline">
-                                    Don&#39;t have an account ?
+                                     Have an account ?
                                 </Link>
-                                <a href="#" className="text-sm text-gray-500 hover:underline">
-                                    Forgot Password
-                                </a>
                             </div>
 
                             <div className="form-control mt-6">
