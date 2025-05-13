@@ -22,9 +22,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"],
     },
     "target": "ES2017"
   },
@@ -32,9 +30,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "pages/login/index.jsx"
-  ],
+    ".next/types/**/*.ts", "lib/session.js", "src/app/api/session/route.js",
+    ],
   "exclude": [
     "node_modules"
   ]
